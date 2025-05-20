@@ -1,0 +1,11 @@
+[package]
+name = "verydot-indexer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Simplified dependencies for the placeholder
+sp-core = { workspace = true }
+sp-runtime = { workspace = true }
+log = "0.4.17"
+tokio = { version = "1.26.0", features = ["full"] }

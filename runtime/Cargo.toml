@@ -1,0 +1,32 @@
+[package]
+name = "verydot-runtime"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Substrate dependencies
+sp-core = { workspace = true }
+sp-runtime = { workspace = true }
+sp-io = { workspace = true }
+sp-std = { workspace = true }
+frame-support = { workspace = true }
+frame-system = { workspace = true }
+pallet-identity = { workspace = true }
+
+# Local dependencies
+verydot-identity = { path = "../pallets/verydot-identity", default-features = false }
+verydot-primitives = { path = "../primitives", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+    "sp-core/std",
+    "sp-runtime/std",
+    "sp-io/std",
+    "sp-std/std",
+    "frame-support/std",
+    "frame-system/std",
+    "pallet-identity/std",
+    "verydot-identity/std",
+    "verydot-primitives/std",
+]

@@ -1,0 +1,17 @@
+[package]
+name = "verydot-node"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "verydot-node"
+path = "src/main.rs"
+
+[dependencies]
+# Substrate dependencies - using simplified dependencies for the placeholder
+sp-core = { workspace = true }
+sp-runtime = { workspace = true }
+log = "0.4.17"
+
+# Local crates
+verydot-runtime = { path = "../runtime" }

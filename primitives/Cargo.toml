@@ -1,0 +1,20 @@
+[package]
+name = "verydot-primitives"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sp-core = { workspace = true }
+sp-runtime = { workspace = true }
+scale-info = { version = "2.3.1", default-features = false, features = ["derive"] }
+parity-scale-codec = { version = "3.2.1", default-features = false, features = ["derive"] }
+
+[features]
+default = ["std"]
+std = [
+    "sp-core/std",
+    "sp-runtime/std",
+    "scale-info/std",
+    "parity-scale-codec/std",
+]
+

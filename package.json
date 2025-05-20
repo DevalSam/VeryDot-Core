@@ -1,0 +1,21 @@
+{
+  "name": "verydot-core",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend/api-server",
+    "backend/notification-service",
+    "tools/migration-tool"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "start:dev": "docker-compose -f deployment/docker/docker-compose/development.yml up -d && npm run dev --workspaces"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "prettier": "^2.8.7"
+  }
+}

@@ -1,0 +1,32 @@
+[workspace]
+members = [
+    "runtime",
+    "pallets/verydot-identity",
+    "node",
+    "primitives",
+    "rpc",
+    "client",
+    "tools/cli",
+    "backend/indexer"
+]
+
+[workspace.dependencies]
+# Substrate dependencies
+substrate = { version = "0.9.32", default-features = false }
+sp-core = { version = "6.0.0", default-features = false }
+sp-runtime = { version = "6.0.0", default-features = false }
+sp-io = { version = "6.0.0", default-features = false }
+sp-std = { version = "4.0.0", default-features = false }
+frame-support = { version = "4.0.0-dev", default-features = false }
+frame-system = { version = "4.0.0-dev", default-features = false }
+pallet-identity = { version = "4.0.0-dev", default-features = false }
+
+# Other common dependencies
+serde = { version = "1.0.152", features = ["derive"] }
+log = "0.4.17"
+env_logger = "0.10.0"
+
+[profile.release]
+panic = "unwind"
+opt-level = 3
+lto = true

@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  # Placeholder for actual services
+  placeholder:
+    image: alpine
+    command: ["echo", "This is a placeholder for the development environment"]
