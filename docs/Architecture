@@ -1,0 +1,101 @@
+graph TB
+subgraph "VeryDot Identity Extension Architecture"
+subgraph "Core Identity System"
+A[Polkadot Base Identity Pallet] --> B[VeryDot Identity Extension Layer]
+B --> C[Industry-Specific Trait System]
+end
+
+```
+    subgraph "Industry Categories"
+        C --> D[Digital Creative Industries]
+        C --> E[Technical Services]
+        C --> F[Business & Consulting]
+
+        D --> D1[Music Production]
+        D --> D2[Digital Art & Design]
+        D --> D3[Content Creation]
+        D --> D4[Virtual Assistance]
+
+        E --> E1[Software Development]
+        E --> E2[DevOps Engineering]
+        E --> E3[Blockchain Development]
+        E --> E4[Data Science]
+
+        F --> F1[Business Strategy]
+        F --> F2[Financial Consulting]
+        F --> F3[Marketing & Sales]
+        F --> F4[Project Management]
+    end
+
+    subgraph "Data Storage Architecture"
+        G[Extended Identity Storage] --> H[Base Identity Fields]
+        G --> I[Industry Extension Fields]
+        G --> J[Verification Documents]
+
+        H --> H1[Display Name]
+        H --> H2[Legal Name]
+        H --> H3[Email]
+        H --> H4[Website]
+
+        I --> I1[Skill Categories]
+        I --> I2[Experience Levels]
+        I --> I3[Specializations]
+        I --> I4[Portfolio Links]
+
+        J --> J1[IPFS Document Hashes]
+        J --> J2[Verification Status]
+        J --> J3[Authority Endorsements]
+    end
+
+    subgraph "Verification System"
+        K[Multi-Level Verification] --> L[Level 1: Basic On-Chain]
+        K --> M[Level 2: Document Verification]
+        K --> N[Level 3: Authority Validation]
+
+        L --> L1[Wallet Activity History]
+        L --> L2[Transaction Patterns]
+        L --> L3[Account Age Verification]
+
+        M --> M1[Portfolio Document Hash]
+        M --> M2[Certificate Verification]
+        M --> M3[Work Sample Authentication]
+
+        N --> N1[Industry Expert Review]
+        N --> N2[Client Testimonials]
+        N --> N3[Professional Endorsements]
+    end
+
+    subgraph "Integration Points"
+        O[IPFS Integration] --> P[Document Storage]
+        O --> Q[Content Addressing]
+        O --> R[Decentralized Access]
+
+        S[Smart Contract Layer] --> T[ink! Contracts]
+        S --> U[State Transitions]
+        S --> V[Access Control]
+
+        W[Frontend Integration] --> X[Polkadot.js API]
+        W --> Y[React Components]
+        W --> Z[Wallet Connectivity]
+    end
+
+    B --> G
+    B --> K
+    G --> S
+    K --> O
+    S --> W
+end
+
+subgraph "External Systems"
+    AA[Polkadot Relay Chain] --> AB[Shared Security]
+    AC[People Chain] --> AD[Identity Registry]
+    AE[IPFS Network] --> AF[Document Storage]
+    AG[External Verifiers] --> AH[Authority Validation]
+end
+
+B --> AA
+B --> AC
+O --> AE
+N --> AG
+
+```
