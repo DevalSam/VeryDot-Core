@@ -1,0 +1,61 @@
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+
+    sequenceDiagram
+    participant User as User
+    participant Frontend as VeryDot Frontend
+    participant Identity as Identity Pallet
+    participant IPFS as IPFS Network
+    participant Verifier as Industry Verifier
+    participant Chain as Polkadot Chain
+    
+    Note over User, Chain: Identity Creation & Verification Flow
+    
+    User->>Frontend: Create profile with industry specialization
+    Frontend->>User: Request documents & portfolio
+    User->>Frontend: Upload verification documents
+    
+    Note over Frontend, IPFS: Document Storage Phase
+    Frontend->>IPFS: Store documents (portfolio, certificates)
+    IPFS->>Frontend: Return document hashes
+    
+    Note over Frontend, Chain: On-Chain Identity Creation
+    Frontend->>Identity: set_extended_identity(base_info, industry_fields, doc_hashes)
+    Identity->>Chain: Store identity data
+    Chain->>Identity: Confirm storage
+    Identity->>Frontend: Identity created (pending verification)
+    Frontend->>User: Profile created - verification pending
+    
+    Note over User, Chain: Verification Request Process
+    User->>Frontend: Request verification for specific industry
+    Frontend->>Identity: request_verification(industry_type)
+    Identity->>Identity: Update status to "verification_requested"
+    Identity->>Frontend: Verification request registered
+    
+    Note over Verifier, Chain: Verifier Review Process
+    Verifier->>Identity: Get pending verifications
+    Identity->>Verifier: Return verification requests
+    Verifier->>IPFS: Retrieve documents using hashes
+    IPFS->>Verifier: Return document contents
+    
+    Note over Verifier: Manual Review Process
+    Verifier->>Verifier: Review portfolio & credentials
+    Verifier->>Identity: provide_judgement(verified/rejected, notes)
+    Identity->>Chain: Update verification status
+    Chain->>Identity: Confirm update
+    
+    Note over Identity, User: Notification & Completion
+    Identity->>Frontend: Emit VerificationCompleted event
+    Frontend->>User: Notify verification result
+    
+    Note over User, Chain: Multi-Industry Expansion (Optional)
+    User->>Frontend: Add expertise in new industry
+    Frontend->>Identity: add_industry_extension(new_industry, fields)
+    Identity->>Chain: Update identity with new industry
+    Chain->>Identity: Confirm update
+    Identity->>Frontend: Industry added successfully
+    Frontend->>User: New industry expertise added

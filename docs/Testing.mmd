@@ -1,0 +1,61 @@
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+
+    graph TB
+    subgraph "Polkadot Identity Pallet Extension"
+        A[Base Identity Pallet] --> B[VeryDot Identity Extension]
+        B --> C[Industry-Specific Traits]
+        C --> D[Digital Creative Industries]
+        C --> E[Technical Services]
+        C --> F[Business Consulting]
+        
+        D --> D1[Music Production Fields]
+        D --> D2[Digital Art Verification]
+        D --> D3[Content Creation Metrics]
+        
+        E --> E1[Programming Languages]
+        E --> E2[DevOps Certifications]
+        E --> E3[Technical Portfolio Links]
+        
+        F --> F1[Business Credentials]
+        F --> F2[Client Testimonials]
+        F --> F3[Industry Experience]
+    end
+
+    subgraph "Storage Architecture"
+        G[IdentityOf Storage] --> H[Extended Identity Struct]
+        H --> I[Base Fields: Display, Legal, Email]
+        H --> J[Industry Extension Fields]
+        J --> K[Vec<(IndustryType, Vec<Field>)>]
+        
+        L[Additional Storage Maps]
+        L --> M[IndustryVerifications]
+        L --> N[SkillCertifications]
+        L --> O[PortfolioHashes]
+    end
+
+    subgraph "Verification System"
+        P[Verification Framework] --> Q[Multi-Level Verification]
+        Q --> R[Level 1: On-Chain Basic]
+        Q --> S[Level 2: IPFS Document Hash]
+        Q --> T[Level 3: Oracle Validation]
+        
+        R --> R1[Wallet Activity History]
+        R --> R2[Transaction Patterns]
+        
+        S --> S1[Portfolio Documents]
+        S --> S2[Certificate Images]
+        S --> S3[Work Sample Files]
+        
+        T --> T1[Third-Party API Verification]
+        T --> T2[Industry Authority Validation]
+        T --> T3[Peer Review Systems]
+    end
+
+    B --> G
+    B --> L
+    B --> P
